@@ -34,8 +34,11 @@ public class EncryptCredentials {
         //String username = "depura.cameras";
         //String password = "TlpeCqmfFil4#13";
         
-        String username = "monitor.eventos";
-        String password = "TlpeCqmfFil4#13";
+        //String username = "monitor.eventos";
+        //String password = "TlpeCqmfFil4#13";
+        
+        String username = "notificaciones.axis@atm.gob.ec";
+        String password = "4s05Yq87Td";
         
         try {
             SecretKey key = KeyManager.loadKey();
