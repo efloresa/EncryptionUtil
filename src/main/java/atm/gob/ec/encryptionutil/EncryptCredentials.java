@@ -25,8 +25,17 @@ public class EncryptCredentials {
         //String username = "notificaciones.plavit@atm.gob.ec";
         //String password = "Nt#EPmtg!!hf92";
         
-        String username = "notificaciones.axis@atm.gob.ec";
-        String password = "Epmtg***2845#";
+        //String username = "notificaciones.axis@atm.gob.ec";
+        //String password = "Epmtg***2845#";
+        
+        //String username = "AXISATM";
+        //String password = "NSVDLMSVCE";
+        
+        //String username = "depura.cameras";
+        //String password = "TlpeCqmfFil4#13";
+        
+        String username = "monitor.eventos";
+        String password = "TlpeCqmfFil4#13";
         
         try {
             SecretKey key = KeyManager.loadKey();
@@ -34,8 +43,8 @@ public class EncryptCredentials {
             String encryptedPassword = KeyManager.encrypt(password, key);
 
             Properties props = new Properties();
-            props.setProperty("db.username", encryptedUsername);
-            props.setProperty("db.password", encryptedPassword);
+            props.setProperty("DB.USER", encryptedUsername);
+            props.setProperty("DB.PASSWD", encryptedPassword);
             //props.setProperty("otra.propiedad", "propiedad11");
 
             try (OutputStream output = new FileOutputStream( strDirectorioSistema + "config.properties")) {

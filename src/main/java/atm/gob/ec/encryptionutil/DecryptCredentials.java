@@ -29,8 +29,8 @@ public class DecryptCredentials {
                 props.load(input);
             }
 
-            String encryptedUsername = props.getProperty("db.username");
-            String encryptedPassword = props.getProperty("db.password");
+            String encryptedUsername = props.getProperty("DB.USER");
+            String encryptedPassword = props.getProperty("DB.PASSWD");
 
             String username = KeyManager.decrypt(encryptedUsername, key);
             String password = KeyManager.decrypt(encryptedPassword, key);
