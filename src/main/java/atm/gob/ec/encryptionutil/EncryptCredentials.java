@@ -28,8 +28,8 @@ public class EncryptCredentials {
         //String username = "notificaciones.axis@atm.gob.ec";
         //String password = "Epmtg***2845#";
         
-        //String username = "AXISATM";
-        //String password = "NSVDLMSVCE";
+        String username1 = "AXISATM";
+        String password2 = "NSVDLMSVCE";
         
         //String username = "depura.cameras";
         //String password = "TlpeCqmfFil4#13";
@@ -37,17 +37,23 @@ public class EncryptCredentials {
         //String username = "monitor.eventos";
         //String password = "TlpeCqmfFil4#13";
         
-        String username = "notificaciones.axis@atm.gob.ec";
-        String password = "4s05Yq87Td";
+        String username3 = "notificaciones.axis@atm.gob.ec";
+        String password4 = "4s05Yq87Td";
         
         try {
             SecretKey key = KeyManager.loadKey();
-            String encryptedUsername = KeyManager.encrypt(username, key);
-            String encryptedPassword = KeyManager.encrypt(password, key);
+            String encryptedUsername1 = KeyManager.encrypt(username1, key);
+            String encryptedPassword2 = KeyManager.encrypt(password2, key);
+
+            String encryptedUsername3 = KeyManager.encrypt(username3, key);
+            String encryptedPassword4 = KeyManager.encrypt(password4, key);
 
             Properties props = new Properties();
-            props.setProperty("DB.USER", encryptedUsername);
-            props.setProperty("DB.PASSWD", encryptedPassword);
+            props.setProperty("DB.USER", encryptedUsername1);
+            props.setProperty("DB.PASSWD", encryptedPassword2);
+            //props.setProperty("otra.propiedad", "propiedad11");
+            props.setProperty("MAIL.USER", encryptedUsername3);
+            props.setProperty("MAIL.PASSWD", encryptedPassword4);
             //props.setProperty("otra.propiedad", "propiedad11");
 
             try (OutputStream output = new FileOutputStream( strDirectorioSistema + "config.properties")) {
