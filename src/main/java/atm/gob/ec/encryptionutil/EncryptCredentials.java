@@ -30,13 +30,13 @@ public class EncryptCredentials {
         //String mailPass = "FGFDG";
         
         //String dbUser = "JNT.SDF";
-        //String dbPass = "FGSFDGS#13";
+        //String dbPass = "";
         
-        String dbUser = "SDFG.VVF";
-        String dbPass = "SDFGR#SGRRVR";
+        String dbUser = "AXISATM";
+        String dbPass = "NSVDLMSVCE";
         
-        String mailFrom = "MMMMM.SDFSD@IOKJJ.gob.ec";
-        String mailPass = "SFDVYUI4556";
+        String mailFrom = "notificaciones.axis@atm.gob.ec";
+        String mailPass = "m6lifw4bmXLzkZp";
         
         try {
             SecretKey key = KeyManager.loadKey();
@@ -45,7 +45,10 @@ public class EncryptCredentials {
 
             String encryptedUsername3 = KeyManager.encrypt(mailFrom, key);
             String encryptedPassword4 = KeyManager.encrypt(mailPass, key);
-
+            
+            System.out.println("DB.PASSWD: " + encryptedPassword2);
+            System.out.println("MAIL.PASS: " + encryptedPassword4);
+            
             Properties props = new Properties();
             props.setProperty("DB.USER", encryptedUsername1);
             props.setProperty("DB.PASSWD", encryptedPassword2);
